@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\AdmonController;
+
+Route::get('/','AdmonController@index');
+
+
+Route::get('/profile/{id}', 'ProfileController@index');
+
+Route::get('/user', 'UsersController@index');
+Route::resource('user', 'UsersController');
+Route::resource('/', 'AdmonController');
